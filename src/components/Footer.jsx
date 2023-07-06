@@ -14,7 +14,7 @@ const Footer = () => {
           </span>
           by Octivion
         </div>
-        <div className="flex gap-2 divide-x-2 text-primary dark:text-primaryDark">
+        <div className="flex gap-2 divide-x-2 dark:divide-light divide-dark text-primary dark:text-primaryDark">
           <Link
             href="https://mail.google.com/mail/?view=cm&source=mailto&to=rkkeepscode@gmail.com&body=Body&su=Subject"
             target="__blank"

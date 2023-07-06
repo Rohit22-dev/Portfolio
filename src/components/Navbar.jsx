@@ -2,16 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
-import {
-  DribbbleIcon,
-  GithubIcon,
-  Instagram,
-  LinkedInIcon,
-  MoonIcon,
-  PinterestIcon,
-  SunIcon,
-  TwitterIcon,
-} from "./Icons";
+import { GithubIcon, LinkedInIcon, MoonIcon, SunIcon } from "./Icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import instagram from "../../public/images/instagram.png";
@@ -204,7 +195,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.9 }}
               className="sm:mx-1 w-6 mx-3"
             >
-              <Instagram />
+              <Image src={instagram} alt="instagram" />
             </motion.a>
 
             <button
