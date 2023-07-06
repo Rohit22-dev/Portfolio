@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import {
   DribbbleIcon,
   GithubIcon,
+  Instagram,
   LinkedInIcon,
   MoonIcon,
   PinterestIcon,
@@ -13,6 +14,8 @@ import {
 } from "./Icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
+import instagram from "../../public/images/instagram.png";
+import Image from "next/image";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -63,7 +66,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full px-32 py-8 font-medium flex items-center justify-between dark:text-ligh relative">
+    <header className="w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8 ">
       <button
         className="flex-col justify-center items-center hidden lg:flex"
         onClick={handleClick}
@@ -90,30 +93,25 @@ const Navbar = () => {
           <CustomLink href="/" title="Home" className="mr-4" />
           <CustomLink href="/about" title="About" className="mx-4" />
           <CustomLink href="/projects" title="Projects" className="mx-4" />
-          <CustomLink href="/certificates" title="Certificates" className="ml-4" />
+          <CustomLink
+            href="/certificates"
+            title="Certificates"
+            className="ml-4"
+          />
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap">
           <motion.a
-            href="https://twitter.com"
+            href="https://github.com/Rohit22-dev"
             target={"_blank"}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             className="w-6 mr-3"
           >
-            <TwitterIcon />
-          </motion.a>
-          <motion.a
-            href="https://twitter.com"
-            target={"_blank"}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 mx-3"
-          >
             <GithubIcon />
           </motion.a>
           <motion.a
-            href="https://twitter.com"
+            href="https://www.linkedin.com/in/rohit-kumar-78322b207"
             target={"_blank"}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -122,22 +120,14 @@ const Navbar = () => {
             <LinkedInIcon />
           </motion.a>
           <motion.a
-            href="https://twitter.com"
+            href="https://www.instagram.com/octivion/"
             target={"_blank"}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             className="w-6 mx-3"
           >
-            <PinterestIcon />
-          </motion.a>
-          <motion.a
-            href="https://twitter.com"
-            target={"_blank"}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 ml-3"
-          >
-            <DribbbleIcon />
+            {/* <DribbbleIcon /> */}
+            <Image src={instagram} alt="instagram" />
           </motion.a>
 
           <button
@@ -190,16 +180,7 @@ const Navbar = () => {
 
           <nav className="flex items-center justify-center flex-wrap mt-2">
             <motion.a
-              href="https://twitter.com"
-              target={"_blank"}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-6 mr-3 sm:mx-1"
-            >
-              <TwitterIcon />
-            </motion.a>
-            <motion.a
-              href="https://twitter.com"
+              href="https://github.com/Rohit22-dev"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
@@ -208,7 +189,7 @@ const Navbar = () => {
               <GithubIcon />
             </motion.a>
             <motion.a
-              href="https://twitter.com"
+              href="https://www.linkedin.com/in/rohit-kumar-78322b207"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
@@ -223,16 +204,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.9 }}
               className="sm:mx-1 w-6 mx-3"
             >
-              <PinterestIcon />
-            </motion.a>
-            <motion.a
-              href="https://twitter.com"
-              target={"_blank"}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              className="sm:mx-1 w-6 ml-3"
-            >
-              <DribbbleIcon />
+              <Instagram />
             </motion.a>
 
             <button
@@ -251,7 +223,7 @@ const Navbar = () => {
         </motion.div>
       ) : null}
 
-      <div className="absolute left-[50%] top-2 translate-x-[-50%]">
+      <div className="absolute left-[50%] top-2 z-50 translate-x-[-50%]">
         <Logo />
       </div>
     </header>

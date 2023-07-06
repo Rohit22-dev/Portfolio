@@ -10,7 +10,15 @@ import { motion } from "framer-motion";
 
 const FramerImage = motion(Image);
 
-const FeaturedProject = ({ type, title, summary, img, link, github }) => {
+const FeaturedProject = ({
+  type,
+  title,
+  summary,
+  img,
+  link,
+  github,
+  techStack,
+}) => {
   return (
     <article className="w-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark bg-light dark:border-light dark:bg-dark shadow-2xl p-12">
       <div className="absolute top-0 -right-4 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl" />
@@ -22,6 +30,8 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
         <FramerImage
           src={img}
           alt={title}
+          width={300}
+          height={200}
           className="w-full h-auto"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
@@ -41,8 +51,14 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
         >
           <h2 className="my-2 w-full text-left text-4xl font-bold ">{title}</h2>
         </Link>
-        <p className="my-2 font-medium text-dark dark:text-light ">{summary}</p>
-        <div className="mt-2 flex items-center">
+        <p className="my-2 font-medium text-dark dark:text-light ">
+          {summary}
+          <br />
+          <span className="italic dark:text-light/75text-dark/75 ">
+            Tech Stack :{techStack}
+          </span>{" "}
+        </p>
+        <div className="mt-2 flex items-center dark:text-light">
           <Link href={github} target="_blank" className="w-10">
             <GithubIcon />
           </Link>
@@ -59,16 +75,23 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   );
 };
 
-const Project = ({ title, type, img, link, github }) => {
+const Project = ({ title, type, img, link, github, techStack }) => {
   return (
     <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light dark:border-light dark:bg-dark p-6 relative">
-      <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl" />
+      <div className="absolute top-0 -right-2 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl" />
       <Link
         href={link}
         target="_blank"
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
-        <Image src={img} alt={title} className="w-full h-auto" />
+        <Image
+          src={img}
+          alt={title}
+          width={300}
+          height={200}
+          className="w-full h-auto"
+          sizes="100vw"
+        />
       </Link>
       <div className="w-full flex flex-col items-start justify-between mt-4">
         <span className="text-primary dark:text-primaryDark font-medium text-xl">
@@ -82,6 +105,9 @@ const Project = ({ title, type, img, link, github }) => {
           <h2 className="my-2 w-full text-left text-3xl font-bold dark:text-light">
             {title}
           </h2>
+          <span className="italic dark:text-light/75 text-dark/75 ">
+            Tech Stack :{techStack}
+          </span>
         </Link>
         <div className="mt-2 flex items-center justify-between w-full">
           <Link
@@ -91,7 +117,57 @@ const Project = ({ title, type, img, link, github }) => {
           >
             Visit
           </Link>
-          <Link href={github} target="_blank" className="w-8">
+          <Link href={github} target="_blank" className="w-8 dark:text-light">
+            <GithubIcon />
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
+};
+
+const MobileProject = ({ title, type, img, link, github, techStack }) => {
+  return (
+    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light dark:border-light dark:bg-dark p-6 relative h-[67rem]">
+      <div className="absolute top-0 -right-2 -z-10 w-[102%] h-[101.5%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl" />
+      <Link
+        href={link}
+        target="_blank"
+        className="w-full cursor-pointer overflow-hidden rounded-lg"
+      >
+        <Image
+          src={img}
+          alt={title}
+          width={300}
+          height={200}
+          className="w-full h-auto"
+        />
+      </Link>
+      <div className="w-full flex flex-col items-start justify-between mt-4">
+        <span className="text-primary dark:text-primaryDark font-medium text-xl">
+          {type}
+        </span>
+        <Link
+          href={link}
+          target="_blank"
+          className="hover:underline underline-offset-2"
+        >
+          <h2 className="my-2 w-full text-left text-3xl font-bold dark:text-light">
+            {title}
+          </h2>
+          <span className="italic dark:text-light/75 text-dark/75 ">
+            Tech Stack :{techStack}
+          </span>
+        </Link>
+        <div className="mt-2 flex items-center justify-between w-full">
+          <Link
+            href={link}
+            target="_blank"
+            className="text-lg font-semibold dark:text-light"
+          >
+            Visit
+          </Link>
+          <Link href={github} target="_blank" className="w-8 dark:text-light">
             <GithubIcon />
           </Link>
         </div>
@@ -118,40 +194,99 @@ const projects = () => {
             <div className="col-span-12">
               <FeaturedProject
                 title="Udbhav"
-                img={project1}
+                img="https://ik.imagekit.io/octivion/Portfolio/udbhav?updatedAt=1688136734584"
                 summary="Web portal for college cultural fest with React,
 Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
                 link="https://www.udbhav.life/"
-                github=""
+                github="https://github.com/Rohit22-dev/udbhav"
                 type="Featured Project"
+                techStack="React, Tailwind, DaisiUI, Firebase"
               />
             </div>
             <div className="col-span-6">
               <Project
-                title="Udbhav"
-                img={project1}
+                title="Chatapp"
+                img="https://ik.imagekit.io/octivion/Portfolio/chatapp?updatedAt=1681589865178"
                 summary="Web portal for college cultural fest with React,
 Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
-                link="https://www.udbhav.life/"
-                github=""
+                link="https://o-chatapp.vercel.app"
+                github="https://github.com/Rohit22-dev/ChatApp"
                 type="Featured Project"
+                techStack="React, Tailwind, DaisiUI, Firebase, Redux"
               />
             </div>
             <div className="col-span-6">
               <Project
-                title="Udbhav"
-                img={project1}
+                title="Weather"
+                img="https://ik.imagekit.io/octivion/Portfolio/weather?updatedAt=1681590452032"
                 summary="Web portal for college cultural fest with React,
 Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
-                link="https://www.udbhav.life/"
-                github=""
+                link="https://forecastfox.vercel.app/"
+                github="https://github.com/Rohit22-dev/Weather"
                 type="Featured Project"
+                techStack="React, Tailwind, Weather API"
               />
             </div>
-
-            <div className="col-span-12">Featured Project</div>
-            <div className="col-span-6">Project-3</div>
-            <div className="col-span-6">Project-4</div>
+            <div className="col-span-6">
+              <Project
+                title="Socialmedia"
+                img="https://ik.imagekit.io/octivion/Portfolio/socialmedia?updatedAt=1681590860152"
+                summary="Web portal for college cultural fest with React,
+                Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
+                link="https://octipedia.netlify.app/"
+                github="https://github.com/Rohit22-dev/Octimedia"
+                type="Featured Project"
+                techStack="React, Express, MongoDB , Node"
+              />
+            </div>
+            <div className="col-span-6">
+              <Project
+                title="NewsApp"
+                img="https://ik.imagekit.io/octivion/Portfolio/newsapp?updatedAt=1681589362713"
+                summary="Web portal for college cultural fest with React,
+                Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
+                link="/"
+                github="https://github.com/Rohit22-dev/NewsApp-web"
+                type="Featured Project"
+                techStack="React, Tailwind, NewsAPI"
+              />
+            </div>
+            <div className="col-span-4">
+              <MobileProject
+                title="News"
+                img="https://ik.imagekit.io/octivion/Portfolio/news-android?updatedAt=1681592819613"
+                summary="Web portal for college cultural fest with React,
+Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
+                link="/"
+                github="https://github.com/Rohit22-dev/NewsApp"
+                type="Featured Project"
+                techStack="ReactNative, NewsAPI"
+              />
+            </div>
+            <div className="col-span-4">
+              <MobileProject
+                title="ChatApp"
+                img="https://ik.imagekit.io/octivion/Portfolio/Screenshot_1688618289_1__DvCQAyEo2.png?updatedAt=1688618562808"
+                summary="Web portal for college cultural fest with React,
+Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
+                link="/"
+                github="https://github.com/Rohit22-dev/Chatapp-Android"
+                type="Featured Project"
+                techStack="ReactNative, Firebase, Redux"
+              />
+            </div>
+            <div className="col-span-4">
+              <MobileProject
+                title="Food App"
+                img="https://ik.imagekit.io/octivion/Portfolio/foodapp?updatedAt=1681592847694"
+                summary="Web portal for college cultural fest with React,
+Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
+                link="/"
+                github="https://github.com/Rohit22-dev/ReactNative-foodApp"
+                type="Featured Project"
+                techStack="ReactNative"
+              />
+            </div>
           </div>
         </Layout>
       </main>

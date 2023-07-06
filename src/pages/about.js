@@ -51,11 +51,11 @@ const about = () => {
               </h2>
               <p className="font-medium">
                 {" "}
-                Hi, I&apos;m CodeBucks, a web developer and UI/UX designer with
-                a passion for creating beautiful, functional, and user-centered
-                digital experiences. With 4 years of experience in the field. I
-                am always looking for new and innovative ways to bring my
-                clients&apos; visions to life.
+                Hi, I&apos;m Rohit, a web developer and software engineer with a
+                passion for creating beautiful, functional, and user-centered
+                digital experiences. I have a solid analytical mindset, approach
+                problems creatively, and am a team-oriented player with an eye
+                for detail.
               </p>
               <p className="font-medium my-4">
                 I believe that design is about more than just making things look
@@ -85,28 +85,28 @@ const about = () => {
             <div className="col-span-2 flex flex-col items-end justify-between">
               <div className="flex flex-col items-end justify-center">
                 <span className="inline-block text-7xl font-bold">
-                  <AnimatedNumbers value="50" />+
+                  <AnimatedNumbers value="10" />+
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
-                  Satisfied clients
+                  Responsive projects
                 </h2>
               </div>
 
               <div className="flex flex-col items-end justify-center">
                 <span className="inline-block text-7xl font-bold">
-                  <AnimatedNumbers value="40" />+
+                  <AnimatedNumbers value="99" />+
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
-                  Projects completed
+                  Competitive questions
                 </h2>
               </div>
 
               <div className="flex flex-col items-end justify-center">
                 <span className="inline-block text-7xl font-bold">
-                  <AnimatedNumbers value="1" />+
+                  <AnimatedNumbers value="2" />+
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
-                  Years of experience
+                  Months of experience
                 </h2>
               </div>
             </div>
