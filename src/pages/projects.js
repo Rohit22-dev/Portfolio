@@ -205,6 +205,18 @@ Tailwind , Spline, React-Router and Firebase. Here individual can login into the
             </div>
             <div className="col-span-6">
               <Project
+                title="Blog"
+                img="https://ik.imagekit.io/octivion/Portfolio/Screenshot_2023-07-17_183103_IWC5L_j7i.png?updatedAt=1689599178234"
+                summary="Web portal for college cultural fest with React,
+Tailwind , Spline, React-Router and Firebase. Here individual can login into there portal and register for upcoming events."
+                link="https://storysage.vercel.app"
+                github="https://github.com/Rohit22-dev/Blog"
+                type="Featured Project"
+                techStack="React, Tailwind, NodeJs, ExpressJs, MongoDB, Redux"
+              />
+            </div>
+            <div className="col-span-6">
+              <Project
                 title="Chatapp"
                 img="https://ik.imagekit.io/octivion/Portfolio/chatapp?updatedAt=1681589865178"
                 summary="Web portal for college cultural fest with React,
@@ -239,7 +251,7 @@ Tailwind , Spline, React-Router and Firebase. Here individual can login into the
                 techStack="React, Express, MongoDB , Node"
               />
             </div>
-            <div className="col-span-6">
+            {/* <div className="col-span-6">
               <Project
                 title="NewsApp"
                 img="https://ik.imagekit.io/octivion/Portfolio/newsapp?updatedAt=1681589362713"
@@ -250,7 +262,7 @@ Tailwind , Spline, React-Router and Firebase. Here individual can login into the
                 type="Featured Project"
                 techStack="React, Tailwind, NewsAPI"
               />
-            </div>
+            </div> */}
             <div className="col-span-4">
               <MobileProject
                 title="News"
